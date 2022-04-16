@@ -1,5 +1,5 @@
 {
-  "name": "project-cis_4339_project_7",
+  "name": "project7",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -10,9 +10,6 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-  
-  },
   "homepage": "",
   "dependencies": {
     "axios": "^0.26.0",
@@ -25,7 +22,7 @@
     "mongoose": "^6.2.3",
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "^1.10.0",
-    "node": "^17.4.0",
+    "node": "^16.14.2",
     "nodemon": "^2.0.15",
     "uuid": "^8.3.2"
   },

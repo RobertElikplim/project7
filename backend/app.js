@@ -13,12 +13,13 @@ const cors = require('cors');
 // awaiting for more readable asynchronous code.
 const axios = require('axios');
 
-require("dotenv").config();   // Require the dotenv
+//require("dotenv").config();   // Require the dotenv
 const app = express();
 
 // Database connection
+const uri = `mongodb+srv://team7:project7@cluster0.vvpdb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose
-    .connect(process.env.MONGO_URL)   // read environment variable from .env
+    .connect(uri, { useNewUrlParser: true,  useUnifiedTopology: true })   // read environment variable from .env
     .then(() => {
         console.log("Database connection Success!");
     })
@@ -39,8 +40,6 @@ app.use(morgan("dev"));
 
 
 // connecting routes to the database. 
-const activityRouter = require('./routes/activity')
-app.use('/activity', activityRouter)
 const clientRouter = require('./routes/client')
 app.use('/client', clientRouter)
 const eventRouter = require('./routes/event')
@@ -49,6 +48,8 @@ const familyRouter = require('./routes/family')
 app.use('/family', familyRouter)
 const workerRouter = require('./routes/worker')
 app.use('/worker', workerRouter)
+const activityRouter = require('./routes/activity')
+app.use('/activity', activityRouter)
 
 
 // listening to the port 
@@ -81,5 +82,15 @@ app.get('/:first_name/:last_name/:phone_number', function(req, res){
         res.status(200).json(response.data);
     }).catch((error) =>{
         res.status(404).json({message: error})
+    });
+});
+
+app.get('/external', (req, res) => {
+    let apiURL = 'https://pudcapi.herokuapp.com/customers';
+    axios.get(apiURL).then(response => {
+        res.json(response.data);
+        })
+        .catch ((err) => {
+        res.status(400).send(err.message);
     });
 });
