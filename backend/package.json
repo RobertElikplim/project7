@@ -1,17 +1,20 @@
 {
-  "name": "test",
+  "name": "project-cis_4339_project_7",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/CIS-Spring-2022/project-cis_4339_project_7.git"
   },
   "author": "Tuba, Saja, Manar",
   "license": "ISC",
   "bugs": {
+    "url": "https://github.com/CIS-Spring-2022/project-cis_4339_project_7/issues"
   },
+  "homepage": "https://github.com/CIS-Spring-2022/project-cis_4339_project_7#readme",
   "dependencies": {
     "axios": "^0.26.0",
     "body-parser": "^1.19.2",

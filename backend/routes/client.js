@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {validate} = require('uuid');
-const clientModel = require('../testing/backend/models/client');
-const eventModel = require('../testing/backend/models/event');
+const clientModel = require('../models/client');
+const eventModel = require('../models/event');
 
 
 //creating the client schema in the database and confirms with user by generating a confirmation message
